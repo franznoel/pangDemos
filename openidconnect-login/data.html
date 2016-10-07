@@ -16,7 +16,10 @@
                         <h2>OpenID Connect</h2>
                         <h3>Congratulations!</h3>
                         <p>You were able to login successfully!</p>
-                        <p>Token: <span id="id_token"></span></p>
+                        <ul>
+                            <li>Token: <span id="id_token"></span></li>
+                            <li>Code: <span id="code"></span></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -27,6 +30,7 @@
             var id_token = OIDC.getValidIdToken();
             var code = OIDC.getCode();
             $("#id_token").html(id_token);
+            $("#code").html(code);
             // var token = OIDC.getAccessToken();
             // console.log(token);
         </script>
