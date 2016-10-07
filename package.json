@@ -1,0 +1,26 @@
+{
+  "name": "pangDemos",
+  "version": "0.0.0",
+  "description": "List of mix programing languages demo projects found in each folder.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fritzdenim/pangDemos.git"
+  },
+  "keywords": [
+    "demos",
+    "tests"
+  ],
+  "author": "Franz Noel Tanglao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fritzdenim/pangDemos/issues"
+  },
+  "homepage": "https://github.com/fritzdenim/pangDemos",
+  "devDependencies": {
+    "serve": "^1.4.0"
+  }
+}

@@ -1,0 +1,34 @@
+<?php include 'config.php'; ?>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Grant Permission</title>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/openidconnect-login/openidconnect.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well">
+                        <h2>OpenID Connect</h2>
+                        <h3>Congratulations!</h3>
+                        <p>You were able to login successfully!</p>
+                        <p>Token: <span id="id_token"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            // console.log(OIDC);
+            OIDC.restoreInfo();
+            var id_token = OIDC.getValidIdToken();
+            var code = OIDC.getCode();
+            $("#id_token").html(id_token);
+            // var token = OIDC.getAccessToken();
+            // console.log(token);
+        </script>
+    </body>
+</html>

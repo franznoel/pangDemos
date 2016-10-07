@@ -1,0 +1,10 @@
+#projects tbody tr td:first-child {
+  width:25%;
+}
+#projects tbody tr td:last-child {
+  width:5%;
+}
+
+#openidconnect-login .container {
+	margin-top:1%;
+}

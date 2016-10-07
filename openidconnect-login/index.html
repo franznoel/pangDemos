@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Main Page</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="openidconnect.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="../styles.css">
+    </head>
+    <body id="openidconnect-login">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well">
+                        <h2>OpenID Connect Login</h2>
+                        <p>Before clicking <code>OpenID Connect Login</code> button, you need to set your GLUU server <code>client_id</code> and <code>client_secret</code></p>
+                        <button onclick="login()" class="btn btn-default">OpenID Connect Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function login() {
+                var clientInfo = {
+                    client_id: '@!960A.A6D7.331D.A81B!0001!6D2A.905F!0008!BA19.CCA0',
+                    redirect_uri: 'https://pang-demos.firebaseapp.com/openconnect-login/data.html'
+                };
+
+                var providerInfo = {
+                    issuer: 'https://gluu-srv.musicreports.com',
+                    authorization_endpoint: 'https://gluu-srv.musicreports.com/oxauth/seam/resource/restv1/oxauth/authorize',
+                    jwks_uri: 'https://gluu-srv.musicreports.com/oxauth/seam/resource/restv1/oxauth/jwks'
+                };
+
+                OIDC.setClientInfo(clientInfo);
+                OIDC.setProviderInfo(providerInfo);
+                OIDC.storeInfo(providerInfo,clientInfo);                
+                OIDC.login();
+            }
+        </script>
+    </body>
+</html>
